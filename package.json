@@ -1,0 +1,20 @@
+{
+  "name": "emmet-sdk-v2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Emmet",
+    "Finance",
+    "SDK",
+    "v2.0"
+  ],
+  "author": "dimabrook79@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "viem": "^2.4.0"
+  }
+}
