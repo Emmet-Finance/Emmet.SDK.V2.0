@@ -1,6 +1,10 @@
-import {Chain} from 'viem';
+import { TEmmetChain } from '../types';
 
 export const polygon = {
+  emmetBridge: {
+    address: "",
+    blockCreated: 0
+  },
     id: 137,
     name: 'Polygon',
     nativeCurrency: { name: 'MATIC', symbol: 'MATIC', decimals: 18 },
@@ -23,4 +27,4 @@ export const polygon = {
       },
     },
     testnet: false,
-  } as Chain;
+  } as TEmmetChain;

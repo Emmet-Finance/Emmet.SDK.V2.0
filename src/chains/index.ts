@@ -27,22 +27,22 @@ export * from './optimismSepolia';
 export * from './polygonMumbai';
 export * from './sepolia';
 
-export const MAINNETS = [
-    arbitrum,
-    avalanche,
-    base,
-    ethereum,
-    optimism,
-    polygon
-];
+export const MAINNETS = {
+    arbitrum: arbitrum,
+    avalanche: avalanche,
+    base: base,
+    ethereum: ethereum,
+    optimism: optimism,
+    polygon: polygon
+}
 
-export const TESTNETS = [
-    arbitrumSepolia,
-    avalancheFuji,
-    baseSepolia,
-    optimismSepolia,
-    polygonMumbai,
-    sepolia
-];
+export const TESTNETS = {
+    arbitrumSepolia: arbitrumSepolia,
+    avalancheFuji: avalancheFuji,
+    baseSepolia: baseSepolia,
+    optimismSepolia: optimismSepolia,
+    polygonMumbai: polygonMumbai,
+    sepolia: sepolia
+};
 
-export const SUPPORTED_CHAINS = MAINNETS && TESTNETS;
+export const SUPPORTED_CHAINS = {...MAINNETS, ...TESTNETS};
