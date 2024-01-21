@@ -67,3 +67,8 @@ export const infuraEndpoints = {
     polygonMumbai: "https://polygon-mumbai.infura.io/v3/",
     sepolia: "https://sepolia.infura.io/v3/",
 }
+
+export const CircleAPI = {
+    mainnet: "https://iris-api.circle.com",
+    testnet: 'https://iris-api-sandbox.circle.com'
+}
