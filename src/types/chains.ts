@@ -1,4 +1,4 @@
-import {SUPPORTED_CHAINS} from '../chains';
+import { SUPPORTED_CHAINS } from '../chains';
 import { Chain } from 'viem';
 
 export type TChainDataParam = "bridge" | "id" | "name" | "url";

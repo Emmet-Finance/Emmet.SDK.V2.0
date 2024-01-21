@@ -1,3 +1,4 @@
+import { TChainName } from '../types';
 import { arbitrum } from './arbitrum';
 import { arbitrumSepolia } from './arbitrumSepolia';
 import { avalanche } from './avalanche';
@@ -46,6 +47,9 @@ export const TESTNETS = {
 };
 
 export const SUPPORTED_CHAINS = { ...MAINNETS, ...TESTNETS };
+
+export const SUPPORTED_CHAIN_IDS: number[] = Object.keys(SUPPORTED_CHAINS)
+    .map(chainName => SUPPORTED_CHAINS[chainName as TChainName].id);
 
 export const infuraEndpoints = {
     // Mainnets:
