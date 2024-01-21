@@ -1,6 +1,6 @@
 
 import { TChainName } from '../types';
-import { findChain, getChainData } from './chains';
+import { findChain, getChainRPC } from './chains';
 import {
     createPublicClient,
     createWalletClient,
@@ -37,15 +37,20 @@ export default function getBrowserExtentionSigner(chainName: TChainName) {
  * Creates a private key signer (Backend only)
  * @param chainName the lowercased name of the targetted chain
  * @param SK the account's private key
+ * @param infuraApiKey (optional) infura API key
  * @returns a viem WalletClient with read & write access
  */
-export function getPrivateKeySigner(chainName: TChainName, SK: string) {
+export function getPrivateKeySigner(
+    chainName: TChainName,
+    SK: string,
+    infuraApiKey?: string
+) {
 
     const chain = findChain(chainName);
 
     const account = privateKeyToAccount(`0x${SK.replace('0x', '')}`);
 
-    const rpcURL: string = getChainData(chainName, "url") as string;
+    const rpcURL: string = getChainRPC(chainName, infuraApiKey);
 
     return createWalletClient({
         account,
@@ -59,13 +64,17 @@ export function getPrivateKeySigner(chainName: TChainName, SK: string) {
 /**
  * Creates a chain reader
  * @param chainName the lowercased name of the targetted chain
+ * @param infuraApiKey (optional) infura API key
  * @returns a viem Public Client with read only access
  */
-export function getProvider(chainName: TChainName) {
+export function getProvider(
+    chainName: TChainName,
+    infuraApiKey?: string
+) {
 
     const chain = findChain(chainName);
 
-    const rpcURL: string = getChainData(chainName, "url") as string;
+    const rpcURL: string = getChainRPC(chainName, infuraApiKey);
 
     return createPublicClient({
         chain,

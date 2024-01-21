@@ -1,5 +1,5 @@
 import { TChainDataParam, TChainName, TEmmetChain } from "../types";
-import { SUPPORTED_CHAINS } from "../chains";
+import { SUPPORTED_CHAINS, infuraEndpoints } from "../chains";
 
 export function getChainData(
     chinName: TChainName,
@@ -53,3 +53,11 @@ export function isTestnet(chainName: TChainName): boolean {
         SUPPORTED_CHAINS[chainName].testnet as boolean;
 }
 
+export function getChainRPC(chainName: TChainName, infuraApiKey?: string): string {
+
+    const RPC = infuraEndpoints[chainName];
+
+    if (RPC && infuraApiKey) { return `${RPC}${infuraApiKey}` }
+
+    return getChainData(chainName, "url") as string;
+}

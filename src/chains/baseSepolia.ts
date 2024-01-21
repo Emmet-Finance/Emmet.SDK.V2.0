@@ -1,45 +1,17 @@
+import {baseSepolia as viemBaseSepolia} from 'viem/chains';
 import { TEmmetChain } from '../types';
 
-const sourceId = 11_155_111 // sepolia
-
 export const baseSepolia = {
+  ...viemBaseSepolia,
   emmetBridge: {
     address: "",
     blockCreated: 0
   },
-  id: 84532,
-  network: 'base-sepolia',
-  name: 'Base Sepolia',
-  nativeCurrency: { name: 'Sepolia Ether', symbol: 'ETH', decimals: 18 },
+  name: "Base Sepolia",
   rpcUrls: {
     default: {
       http: ['https://sepolia.base.org'],
     },
   },
-  blockExplorers: {
-    default: {
-      name: 'Basescan',
-      url: 'https://sepolia.basescan.org',
-      apiUrl: 'https://api-sepolia.basescan.org/api',
-    },
-  },
-  contracts: {
-    l2OutputOracle: {
-      [sourceId]: {
-        address: '0x84457ca9D0163FbC4bbfe4Dfbb20ba46e48DF254',
-      },
-    },
-    portal: {
-      [sourceId]: {
-        address: '0x49f53e41452c74589e85ca1677426ba426459e85',
-        blockCreated: 4446677,
-      },
-    },
-    multicall3: {
-      address: '0xca11bde05977b3631167028862be2a173976ca11',
-      blockCreated: 1059647,
-    },
-  },
   testnet: true,
-  sourceId,
 } as TEmmetChain;
