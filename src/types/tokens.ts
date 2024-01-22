@@ -1,6 +1,7 @@
 
 /**
  * Circle contracts: https://developers.circle.com/stablecoins/docs/evm-smart-contracts
+ * Circle USDC: EVM & Non-EVM: https://www.circle.com/en/multichain-usdc
  */
 
 import { TChainName } from "./chains";

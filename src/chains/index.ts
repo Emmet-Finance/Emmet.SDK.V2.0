@@ -12,6 +12,8 @@ import { polygon } from './polygon';
 import { polygonMumbai } from './polygonMumbai';
 import { sepolia } from './sepolia';
 
+// https://github.com/wevm/viem/blob/main/src/chains/definitions
+
 // MAINNETS:
 export * from './arbitrum';
 export * from './avalanche';
