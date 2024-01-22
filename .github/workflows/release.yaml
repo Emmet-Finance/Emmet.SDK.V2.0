@@ -32,7 +32,7 @@ jobs:
         mkdir out
         mv package.json out
         mv dist out
-        mv README.md out
+        mv Readme.md out
         mv LICENSE out
         mv .gitignore out
 
