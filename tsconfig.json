@@ -11,12 +11,19 @@
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
-      "*": ["types/*"]
+      "*": [
+        "types/*"
+      ]
     },
     "outDir": "./dist",
-    "types": ["node"]
   },
-  "include": ["src/**/*.tsx", "src/**/*.ts", "src/**/*.d.ts"],
-  "exclude": ["node_modules", "./dist/**/*"]
+  "include": [
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "./dist/**/*"
+  ]
 }
-  
