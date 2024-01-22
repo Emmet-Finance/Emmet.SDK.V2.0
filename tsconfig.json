@@ -15,7 +15,7 @@
         "types/*"
       ]
     },
-    "outDir": "./dist",
+    "outDir": "./dist"
   },
   "include": [
     "src/**/*.tsx",
@@ -25,5 +25,6 @@
   "exclude": [
     "node_modules",
     "./dist/**/*"
-  ]
+  ],
+  "types": ["./types/emmet-sdk-v2.d.ts"]
 }
