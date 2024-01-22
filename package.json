@@ -1,7 +1,7 @@
 {
-  "name": "emmet-sdk-v2.0",
-  "version": "1.0.0",
-  "description": "",
+  "name": "emmet-sdk-v2",
+  "version": "2.0.0",
+  "description": "An SDK for Emmet.Finance Bridge",
   "main": "index.js",
   "scripts": {
     "build": "tsc"
@@ -10,7 +10,9 @@
     "Emmet",
     "Finance",
     "SDK",
-    "v2.0"
+    "v2.0",
+    "Token",
+    "Bridge"
   ],
   "author": "dimabrook79@gmail.com",
   "license": "ISC",
