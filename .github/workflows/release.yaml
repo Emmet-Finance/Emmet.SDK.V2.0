@@ -33,7 +33,6 @@ jobs:
         mv package.json out
         mv dist out
         mv Readme.md out
-        mv LICENSE out
         mv .gitignore out
 
     - name: List Contents of out folder
