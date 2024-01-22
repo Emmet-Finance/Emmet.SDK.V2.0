@@ -52,7 +52,7 @@ jobs:
       run: |
         cd out/
         cp package.json ./dist/package.json
-        cp README.md ./dist/README.md
+        cp Readme.md ./dist/Readme.md
         npm publish ./dist
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
