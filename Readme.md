@@ -2,6 +2,10 @@
 
 ## Library installation
 
+```bash
+npm install git+https://github.com/Emmet-Finance/Emmet.SDK.V2.0.git
+```
+
 Installation with `npm`:
 
 ```bash
