@@ -10,14 +10,12 @@ Installation with `npm`:
 
 ```bash
 npm install emmet-sdk-v2
-npm install @types/emmet-sdk-v2 --save-dev
 ```
 
 Installation with `yarn`:
 
 ```bash
 yarn add emmet-sdk-v2
-yarn add @types/emmet-sdk-v2 -D
 ```
 
 ## Library contents
