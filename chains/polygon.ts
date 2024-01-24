@@ -1,0 +1,17 @@
+import { polygon as viemPolygon } from 'viem/chains';
+import { TEmmetChain } from '../types';
+
+export const polygon = {
+  ...viemPolygon,
+  emmetBridge: {
+    address: "",
+    blockCreated: 0
+  },
+    name: 'Polygon',
+    rpcUrls: {
+      default: {
+        http: ['https://polygon-rpc.com'],
+      },
+    },
+    testnet: false,
+  } as TEmmetChain;

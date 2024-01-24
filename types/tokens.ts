@@ -1,12 +1,14 @@
-"use strict";
+
 /**
  * Circle contracts: https://developers.circle.com/stablecoins/docs/evm-smart-contracts
  * Circle USDC: EVM & Non-EVM: https://www.circle.com/en/multichain-usdc
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.CircleDestDomainsIdToChainName = exports.CircleDestDomainsChainNameToId = exports.CircleEnvironments = exports.BridgeFeeStructure = exports.TOKEN_CHAIN_CONTRACT = exports.ChainToTransmitterContract = exports.ChainToMessengerAddress = void 0;
-exports.ChainToMessengerAddress = {
+
+import { TChainName } from "./chains";
+
+export const ChainToMessengerAddress = {
     // Method: Deposit For Burn 0x6fd3504e
+
     // Mainnets:
     arbitrum: '0x19330d10D9Cc8751218eaf51E8885D058642E08A',
     avalanche: '0x6B25532e1060CE10cc3B0A99e5683b91BFDe6982',
@@ -21,9 +23,11 @@ exports.ChainToMessengerAddress = {
     optimismSepolia: '0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5',
     sepolia: '0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5',
     polygonMumbai: '0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5',
-};
-exports.ChainToTransmitterContract = {
+}
+
+export const ChainToTransmitterContract = {
     // Method: Receive message 0x57ecfd28
+
     // Mainnets:
     arbitrum: '0xC30362313FBBA5cf9163F0bb16a0e01f01A896ca',
     avalanche: '0x8186359aF5F57FbB40c6b14A588d2A59C0C29880',
@@ -38,8 +42,10 @@ exports.ChainToTransmitterContract = {
     optimismSepolia: '0x7865fAfC2db2093669d92c0F33AeEF291086BEFD',
     sepolia: '0x7865fAfC2db2093669d92c0F33AeEF291086BEFD',
     polygonMumbai: '0xe09A679F56207EF33F5b9d8fb4499Ec00792eA73',
-};
-exports.TOKEN_CHAIN_CONTRACT = {
+
+}
+
+export const TOKEN_CHAIN_CONTRACT = {
     EURC: {
         // Mainnets:
         avalanche: '0xc891eb4cbdeff6e073e859e987815ed1505c2acd',
@@ -62,19 +68,21 @@ exports.TOKEN_CHAIN_CONTRACT = {
         sepolia: '0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238',
         polygonMumbai: '0x9999f7Fea5938fD3b1E26A12c3f2fb024e194f97',
     }
-};
-exports.BridgeFeeStructure = {
+}
+
+export const BridgeFeeStructure = {
     stablecoins: {
         percentage: 0.0002,
         minimum: 0.4
     }
-};
-var CircleEnvironments;
-(function (CircleEnvironments) {
-    CircleEnvironments["production"] = "https://api.circle.com";
-    CircleEnvironments["sandbox"] = "https://api-sandbox.circle.com";
-})(CircleEnvironments || (exports.CircleEnvironments = CircleEnvironments = {}));
-exports.CircleDestDomainsChainNameToId = {
+}
+
+export enum CircleEnvironments {
+    production = "https://api.circle.com",
+    sandbox = "https://api-sandbox.circle.com"
+}
+
+export const CircleDestDomainsChainNameToId: {[key in TChainName]: number} = {
     arbitrum: 3,
     arbitrumSepolia: 3,
     avalanche: 1,
@@ -87,8 +95,9 @@ exports.CircleDestDomainsChainNameToId = {
     optimismSepolia: 2,
     polygon: 7,
     polygonMumbai: 7,
-};
-exports.CircleDestDomainsIdToChainName = {
+}
+
+export const CircleDestDomainsIdToChainName = {
     mainnet: {
         0: 'ethereum',
         1: 'avalanche',
@@ -105,4 +114,4 @@ exports.CircleDestDomainsIdToChainName = {
         6: 'baseSepolia',
         7: 'polygonMumbai',
     }
-};
+}
