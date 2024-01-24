@@ -3,7 +3,7 @@
   "version": "2.0.2",
   "description": "An SDK for Emmet.Finance Bridge",
   "main": "index.js",
-  "types": "./types/index.d.ts",
+  "types": "./emmet-sdk-v2/index.d.ts",
   "scripts": {
     "build": "tsc"
   },
@@ -23,5 +23,8 @@
   "devDependencies": {
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
