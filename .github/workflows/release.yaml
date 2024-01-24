@@ -29,11 +29,11 @@ jobs:
 
     - name: prepare package
       run: |
-        mkdir out
-        mv package.json out
-        cp -r src/* out
-        mv Readme.md out
-        mv .gitignore out
+        mkdir emmet-sdk-v2
+        mv package.json emmet-sdk-v2
+        cp -r src/* emmet-sdk-v2
+        mv Readme.md emmet-sdk-v2
+        mv .gitignore emmet-sdk-v2
 
     - name: List Contents of out folder
       run: ls -R out
@@ -50,6 +50,7 @@ jobs:
 
     - name: Publish to NPM
       run: |
-        npm publish out
+        cd emmet-sdk-v2/
+        npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
