@@ -51,7 +51,9 @@ export const TOKEN_CHAIN_CONTRACT = {
         avalanche: '0xc891eb4cbdeff6e073e859e987815ed1505c2acd',
         ethereum: '0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c',
         // Testnets:
+        avalancheFuji: "0x5e44db7996c682e92a960b65ac713a54ad815c6b",
         sepolia: '0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4',
+
     },
     USDC: {
         // Mainnets:
@@ -114,4 +116,13 @@ export const CircleDestDomainsIdToChainName = {
         6: 'baseSepolia',
         7: 'polygonMumbai',
     }
+}
+
+export const originTransactionFee = {
+    sepolia:            0.002537323011846245, // ETH
+    avalancheFuji:      0.003593025000000000, // AVAX
+    optimismSepolia:    0.000282381060608769, // ETH
+    arbitrumSepolia:    0.000152201500000000, // ETH
+    baseSepolia:        0.000804666739087198, // ETH
+    polygonMumbai:      0.030414678249354175, // MATIC
 }

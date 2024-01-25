@@ -1,9 +1,9 @@
 {
   "name": "emmet-sdk-v2",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "An SDK for Emmet.Finance Bridge",
-  "main": "index.js",
-  "types": "./emmet-sdk-v2/index.d.ts",
+  "main": "index.ts",
+  "types": "./types/index.ts",
   "scripts": {
     "build": "tsc"
   },
