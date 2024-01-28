@@ -1,9 +1,14 @@
+import { SUPPORTED_CHAINS } from '../chains';
+import { TCircleClaimFeeChainName, TChainName, TEmmetChain } from '../types';
+import { destCircleClaimFee, originCircleBurnFee, txBackend } from '../types';
+
 export * from './address';
 export * from './viem';
 
 // Constants
 export const stablecoinMinimumFee = 400_000;
 export const stablecoinFee = 200;
+export const protocolFeeDivisor = 40;
 
 /**
  * Fetches an ENV variable
@@ -23,12 +28,12 @@ export function getEnvKeyOrThrow(key: string): string {
 }
 
 /**
- * Calculates the bridge fee
+ * Calculates the stablecoin-related (protocol) fee
  * @param amount the amount to be transferred
  * @param decimals token decials
  * @returns the fee to be deduced from the token
  */
-export function calculateBridgeFee(amount: number, decimals: number) {
+export function calculateCoinFee(amount: number, decimals: number) {
 
     stablecoinMinimumFee * (decimals / 1e6);
 
@@ -36,4 +41,26 @@ export function calculateBridgeFee(amount: number, decimals: number) {
 
     return percentage > stablecoinMinimumFee ? percentage : stablecoinMinimumFee;
 
+}
+
+export async function calculateMessageValue(
+    originalChainName: TChainName,
+    destinationChainName: TCircleClaimFeeChainName
+): Promise<number> {
+    
+    const fromChainCoin: string = SUPPORTED_CHAINS[originalChainName].nativeCurrency.symbol;
+    const toChainCoin: string = SUPPORTED_CHAINS[destinationChainName as TChainName].nativeCurrency.symbol;
+    const destinationFee = destCircleClaimFee[destinationChainName];
+
+    const result = await fetch(`${txBackend}coins?fromCoinName=${fromChainCoin}&toCoinName=${toChainCoin}`);
+    const {ok, fromCoinPrice, toCoinPrice} = await result.json();
+
+    if(ok){
+        const destFeeReimburement = destinationFee * toCoinPrice / fromCoinPrice;
+        const nativeTransactionFee = originCircleBurnFee[originalChainName as TCircleClaimFeeChainName];
+        const protocolFee = (destFeeReimburement + nativeTransactionFee) / protocolFeeDivisor;
+        return destFeeReimburement + protocolFee;
+    } else {
+        return 0;
+    }
 }

@@ -1,56 +1,11 @@
 
-/**
- * Circle contracts: https://developers.circle.com/stablecoins/docs/evm-smart-contracts
- * Circle USDC: EVM & Non-EVM: https://www.circle.com/en/multichain-usdc
- */
-
-import { TChainName } from "./chains";
-
-export const ChainToMessengerAddress = {
-    // Method: Deposit For Burn 0x6fd3504e
-
-    // Mainnets:
-    arbitrum: '0x19330d10D9Cc8751218eaf51E8885D058642E08A',
-    avalanche: '0x6B25532e1060CE10cc3B0A99e5683b91BFDe6982',
-    base: '0x1682Ae6375C4E4A97e4B583BC394c861A46D8962',
-    ethereum: '0xBd3fa81B58Ba92a82136038B25aDec7066af3155',
-    optimism: '0x2B4069517957735bE00ceE0fadAE88a26365528f',
-    polygon: '0x9daF8c91AEFAE50b9c0E69629D3F6Ca40cA3B3FE',
-    // Testnets:
-    arbitrumSepolia: '0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5',
-    avalancheFuji: '0xeb08f243E5d3FCFF26A9E38Ae5520A669f4019d0',
-    baseSepolia: '0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5',
-    optimismSepolia: '0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5',
-    sepolia: '0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5',
-    polygonMumbai: '0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5',
-}
-
-export const ChainToTransmitterContract = {
-    // Method: Receive message 0x57ecfd28
-
-    // Mainnets:
-    arbitrum: '0xC30362313FBBA5cf9163F0bb16a0e01f01A896ca',
-    avalanche: '0x8186359aF5F57FbB40c6b14A588d2A59C0C29880',
-    base: '0xAD09780d193884d503182aD4588450C416D6F9D4',
-    ethereum: '0x0a992d191DEeC32aFe36203Ad87D7d289a738F81',
-    optimism: '0x4D41f22c5a0e5c74090899E5a8Fb597a8842b3e8',
-    polygon: '0xF3be9355363857F3e001be68856A2f96b4C39Ba9',
-    // Testnets:
-    arbitrumSepolia: '0xaCF1ceeF35caAc005e15888dDb8A3515C41B4872',
-    avalancheFuji: '0xa9fB1b3009DCb79E2fe346c16a604B8Fa8aE0a79',
-    baseSepolia: '0x7865fAfC2db2093669d92c0F33AeEF291086BEFD',
-    optimismSepolia: '0x7865fAfC2db2093669d92c0F33AeEF291086BEFD',
-    sepolia: '0x7865fAfC2db2093669d92c0F33AeEF291086BEFD',
-    polygonMumbai: '0xe09A679F56207EF33F5b9d8fb4499Ec00792eA73',
-
-}
 
 export const TOKEN_CHAIN_CONTRACT = {
     EURC: {
-        // Mainnets:
+        // Mainnets: https://developers.circle.com/stablecoins/docs/eurc-on-main-networks
         avalanche: '0xc891eb4cbdeff6e073e859e987815ed1505c2acd',
         ethereum: '0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c',
-        // Testnets:
+        // Testnets: https://developers.circle.com/stablecoins/docs/eurc-on-test-networks
         avalancheFuji: "0x5e44db7996c682e92a960b65ac713a54ad815c6b",
         sepolia: '0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4',
 
@@ -70,59 +25,4 @@ export const TOKEN_CHAIN_CONTRACT = {
         sepolia: '0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238',
         polygonMumbai: '0x9999f7Fea5938fD3b1E26A12c3f2fb024e194f97',
     }
-}
-
-export const BridgeFeeStructure = {
-    stablecoins: {
-        percentage: 0.0002,
-        minimum: 0.4
-    }
-}
-
-export enum CircleEnvironments {
-    production = "https://api.circle.com",
-    sandbox = "https://api-sandbox.circle.com"
-}
-
-export const CircleDestDomainsChainNameToId: {[key in TChainName]: number} = {
-    arbitrum: 3,
-    arbitrumSepolia: 3,
-    avalanche: 1,
-    avalancheFuji: 1,
-    base: 6,
-    baseSepolia: 6,
-    ethereum: 0,
-    sepolia: 0,
-    optimism: 2,
-    optimismSepolia: 2,
-    polygon: 7,
-    polygonMumbai: 7,
-}
-
-export const CircleDestDomainsIdToChainName = {
-    mainnet: {
-        0: 'ethereum',
-        1: 'avalanche',
-        2: 'optimism',
-        3: 'arbitrum',
-        6: 'base',
-        7: 'polygon',
-    },
-    testnet: {
-        0: 'sepolia',
-        1: 'avalancheFuji',
-        2: 'optimismSepolia',
-        3: 'arbitrumSepolia',
-        6: 'baseSepolia',
-        7: 'polygonMumbai',
-    }
-}
-
-export const originTransactionFee = {
-    sepolia:            0.002537323011846245, // ETH
-    avalancheFuji:      0.003593025000000000, // AVAX
-    optimismSepolia:    0.000282381060608769, // ETH
-    arbitrumSepolia:    0.000152201500000000, // ETH
-    baseSepolia:        0.000804666739087198, // ETH
-    polygonMumbai:      0.030414678249354175, // MATIC
 }
