@@ -26,3 +26,5 @@ export const TOKEN_CHAIN_CONTRACT = {
         polygonMumbai: '0x9999f7Fea5938fD3b1E26A12c3f2fb024e194f97',
     }
 }
+
+export type TTokenName = keyof typeof TOKEN_CHAIN_CONTRACT;

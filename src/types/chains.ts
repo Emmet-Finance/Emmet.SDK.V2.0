@@ -9,5 +9,9 @@ export type TEmmetChain = Chain & {
     emmetBridge: {
         address: string,
         blockCreated: number
+    },
+    emmetFeeOracle: {
+        address: string,
+        blockCreated: number
     }
 }
