@@ -1,3 +1,4 @@
+import { TransactionReceipt } from 'viem';
 import { TChainDataParam, TChainName, TEmmetChain } from "../types";
 import { SUPPORTED_CHAINS, SUPPORTED_CHAIN_IDS, infuraEndpoints } from "../chains";
 
@@ -66,4 +67,30 @@ export function isSupportedChainId(chainId: number): boolean {
 export function isTestnet(chainName: TChainName): boolean {
     return isSupportedChain(chainName) &&
         SUPPORTED_CHAINS[chainName].testnet as boolean;
+}
+
+/**
+ * Checks the log relevance
+ * @param log a received log
+ * @param check the bridge contract without 0x
+ * @returns true | false
+ */
+export function isLogRelevant(log: any, check: string): boolean {
+    if (log && log[0] && log[0].data.includes(check)) {
+        return true;
+    }
+    return false;
+}
+
+/**
+ * Extracts the transaction fee from the TransactionReceipt
+ * @param txReceipt a viem parsed transaction
+ * @returns the transaction fee
+ */
+export function getTxFee(
+    txReceipt: TransactionReceipt
+) {
+    const _gasUsed: number = parseInt(txReceipt.gasUsed.toString())
+    const _effectiveGasPrice: number = parseInt(txReceipt.effectiveGasPrice.toString())
+    return _gasUsed * _effectiveGasPrice / 1e18;
 }
