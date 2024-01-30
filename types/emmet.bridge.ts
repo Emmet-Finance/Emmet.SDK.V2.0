@@ -6,7 +6,7 @@ export const txBackend: string = "https://testnet-tx.emmet.finance/";
 export const emailBackend: string = "https://emails-backend-cc23168feba6.herokuapp.com";
 
 export const destCircleClaimFee = {
-    sepolia:            0.002537323011846245, // ETH
+    sepolia:            0.000373724411541901, // ETH
     avalancheFuji:      0.003593025000000000, // AVAX
     optimismSepolia:    0.000282381060608769, // ETH
     arbitrumSepolia:    0.000152201500000000, // ETH
@@ -15,7 +15,7 @@ export const destCircleClaimFee = {
 }
 
 export const originCircleBurnFee = {
-    sepolia:            0.001000000000000000, // ETH
+    sepolia:            0.004128722230000000, // ETH
     avalancheFuji:      0.010000000000000000, // AVAX
     optimismSepolia:    0.000200000000000000, // ETH
     arbitrumSepolia:    0.000300000000000000, // ETH

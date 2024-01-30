@@ -10,6 +10,21 @@ export enum CircleEnvironments {
     sandbox = "https://api-sandbox.circle.com"
 }
 
+export enum AttestationStatus {
+    complete = 'complete',
+    pending_confirmations = 'pending_confirmations',
+}
+
+export interface Attestation {
+    message: string | null
+    status: AttestationStatus
+}
+
+export interface AttestationResponse {
+    attestation: string | null
+    status: AttestationStatus
+}
+
 export const ChainToMessengerAddress = {
     // Method: Deposit For Burn 0x6fd3504e
 
@@ -49,7 +64,10 @@ export const ChainToTransmitterContract = {
 
 }
 
-export const CircleDestDomainsIdToChainName = {
+export const CircleDestDomainsIdToChainName: {
+    mainnet: { [key: number]: TChainName },
+    testnet: { [key: number]: TChainName }
+} = {
     mainnet: {
         0: 'ethereum',
         1: 'avalanche',
@@ -68,7 +86,7 @@ export const CircleDestDomainsIdToChainName = {
     }
 }
 
-export const CircleDestDomainsChainNameToId: {[key in TChainName]: number} = {
+export const CircleDestDomainsChainNameToId: { [key in TChainName]: number } = {
     arbitrum: 3,
     arbitrumSepolia: 3,
     avalanche: 1,

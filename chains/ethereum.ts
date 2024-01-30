@@ -7,9 +7,16 @@ export const ethereum = {
     address: "",
     blockCreated: 0
   },
+  emmetFeeOracle:{
+    address:"",
+    blockCreated: 0
+  },
   name: "Ethereum",
   rpcUrls: {
     default: {
+      http: ['https://cloudflare-eth.com'],
+    },
+    public: {
       http: ['https://cloudflare-eth.com'],
     },
   },

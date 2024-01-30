@@ -1,31 +1,20 @@
 import { SUPPORTED_CHAINS } from '../chains';
-import { TCircleClaimFeeChainName, TChainName, TEmmetChain } from '../types';
-import { destCircleClaimFee, originCircleBurnFee, txBackend } from '../types';
+import { 
+    TCircleClaimFeeChainName, 
+    TChainName, 
+    destCircleClaimFee, 
+    originCircleBurnFee, 
+    txBackend
+} from '../types';
 
 export * from './address';
+export * from './chains';
 export * from './viem';
 
 // Constants
 export const stablecoinMinimumFee = 400_000;
 export const stablecoinFee = 200;
 export const protocolFeeDivisor = 40;
-
-/**
- * Fetches an ENV variable
- * @param key the environment key
- * @returns the value if exists
- */
-export function getEnvKeyOrThrow(key: string): string {
-    try {
-        require('dotenv').config();
-        const value = process.env[key];
-        if (value) return value;
-        
-    } catch (error:{message:string}|any) {
-        throw new Error(`emmet-sdk-v2 getEnvKeyOrThrow Error: ${error.message}`);
-    }
-    throw new Error(`${key} is missing in the .env.`);
-}
 
 /**
  * Calculates the stablecoin-related (protocol) fee
@@ -64,3 +53,7 @@ export async function calculateMessageValue(
         return 0;
     }
 }
+
+// ====================  T I M E  ====================
+
+export const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));

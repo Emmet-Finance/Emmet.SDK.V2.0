@@ -7,9 +7,14 @@ export const avalanche = {
     address: "",
     blockCreated: 0
   },
+  emmetFeeOracle:{
+    address:"",
+    blockCreated: 0
+  },
   name: "Avalanche",
   rpcUrls: {
     default: { http: ['https://api.avax.network/ext/bc/C/rpc'] },
+    public: { http: ['https://api.avax.network/ext/bc/C/rpc'] },
   },
   testnet: false,
 } as TEmmetChain;

@@ -7,10 +7,18 @@ export const arbitrum = {
     address: "",
     blockCreated: 0
   },
+  emmetFeeOracle:{
+    address:"",
+    blockCreated: 0
+  },
   name: "Arbitrum",
   rpcUrls: {
     default: {
       http: ['https://arb1.arbitrum.io/rpc'],
     },
+    public: {
+      http: ['https://arb1.arbitrum.io/rpc'],
+    },
+
   },
 } as TEmmetChain;
