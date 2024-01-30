@@ -9,9 +9,16 @@ export const optimism = {
     address: "",
     blockCreated: 0
   },
+  emmetFeeOracle:{
+    address:"",
+    blockCreated: 0
+  },
   name: 'Optimism',
   rpcUrls: {
     default: {
+      http: ['https://mainnet.optimism.io'],
+    },
+    public: {
       http: ['https://mainnet.optimism.io'],
     },
   },
